@@ -3,6 +3,7 @@ const dashWrap = document.getElementById("dashWrap");
 const clock = document.getElementById("clock");
 const steps = document.querySelectorAll(".step");
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
 function tick() {
   if (!clock) return;
   clock.textContent = new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
@@ -109,7 +110,7 @@ function initPipeline() {
 function initModelTilt() {
   const stage = document.getElementById("modelStage");
   const tilt = document.getElementById("modelTilt");
-  if (!stage || !tilt || reduced) return;
+  if (!stage || !tilt || reduced || !finePointer) return;
 
   const maxTilt = 8;
   let targetRX = 0;
@@ -173,7 +174,7 @@ initModelTilt();
 
 function initCursorGrid() {
   const grid = document.getElementById("cursorGrid");
-  if (!grid || reduced) return;
+  if (!grid || reduced || !finePointer) return;
 
   const radius = 190;
   grid.style.setProperty("--grid-radius", `${radius}px`);
@@ -233,7 +234,7 @@ function initDashTilt() {
   const dashEl = document.getElementById("dash");
   const floor = stage?.querySelector(".dash-floor");
   const layers = tilt?.querySelectorAll(".dash-layer");
-  if (!stage || !tilt || !dashEl || reduced) return;
+  if (!stage || !tilt || !dashEl || reduced || !finePointer) return;
 
   const maxTilt = 14;
   let targetRX = 0;
@@ -329,7 +330,7 @@ function initReelPlayer() {
 function initReelTilt() {
   const stage = document.getElementById("reelStage");
   const tilt = document.getElementById("reelTilt");
-  if (!stage || !tilt || reduced) return;
+  if (!stage || !tilt || reduced || !finePointer) return;
 
   const maxTilt = 10;
   let targetRX = 0;

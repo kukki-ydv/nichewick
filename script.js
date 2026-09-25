@@ -45,16 +45,19 @@ function initPipeline() {
   const modelCount = document.getElementById("modelCount");
   let i = 0;
   let timer;
-  let switching = false;
+  let switchTimer = null;
   let firstRun = true;
 
-  const setActive = (index) => {
+  const setActive = (index, userInitiated = false) => {
+    if (index === i && !firstRun && !userInitiated) return;
+
     steps.forEach((s, idx) => {
       s.classList.remove("active");
       s.classList.toggle("passed", idx < index);
     });
     const step = steps[index];
     step.classList.add("active");
+    i = index;
 
     const pct = ((index + 1) / steps.length) * 100;
     if (progress) progress.style.width = `${pct}%`;
@@ -69,20 +72,25 @@ function initPipeline() {
       if (modelCount) modelCount.textContent = `Step ${index + 1} of ${steps.length}`;
       if (modelPhase) modelPhase.textContent = name;
       if (modelDesc) modelDesc.textContent = desc;
-      modelHero?.classList.remove("is-switching");
-      switching = false;
+      requestAnimationFrame(() => {
+        modelHero?.classList.remove("is-switching");
+      });
     };
 
+    if (switchTimer) {
+      clearTimeout(switchTimer);
+      switchTimer = null;
+    }
+
     if (modelHero && !firstRun) {
-      switching = true;
       modelHero.classList.add("is-switching");
-      setTimeout(applyContent, 220);
+      switchTimer = setTimeout(applyContent, 280);
     } else {
       applyContent();
       firstRun = false;
     }
 
-    if (window.innerWidth <= 900) {
+    if (userInitiated && window.innerWidth <= 900) {
       step.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
     }
   };
@@ -90,15 +98,13 @@ function initPipeline() {
   const startCycle = () => {
     clearInterval(timer);
     timer = setInterval(() => {
-      i = (i + 1) % steps.length;
-      setActive(i);
-    }, 2800);
+      setActive((i + 1) % steps.length);
+    }, 3000);
   };
 
   steps.forEach((step, idx) => {
     step.addEventListener("click", () => {
-      i = idx;
-      setActive(i);
+      setActive(idx, true);
       startCycle();
     });
   });

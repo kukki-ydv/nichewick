@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nichewick — The Growth House.">
+  <title>Nichewick</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="nichewick-logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="grid-page">
+    <aside class="col side left">
+      <p class="copy fade">© 2026 Nichewick</p>
+    </aside>
+
+    <main class="col center" id="top">
+      <header class="top-bar fade">
+        <a class="brand" href="#top">
+          <img src="nichewick-logo.png" alt="Nichewick — Your growth, our vision" class="brand-logo">
+        </a>
+      </header>
+
+      <section class="hero">
+        <p class="label hero-label fade">The Growth House</p>
+        <h1 class="hero-title reveal">
+          <span class="word">We</span>
+          <span class="word">find</span>
+          <span class="word dim">what’s</span>
+          <span class="word dim">stopping</span>
+          <span class="word dim">you</span>
+          <span class="word dim">from</span>
+          <span class="word">growing.</span>
+        </h1>
+        <p class="lead fade">Nichewick is your venture growth partner — audit, strategy, and execution for founders who need a system, not another deck.</p>
+        <div class="actions fade">
+          <a class="btn solid" href="#contact"><span>Book audit</span></a>
+          <a class="btn ghost" href="#work"><span>Our work</span></a>
+        </div>
+        <p class="hero-tag fade">Your growth, our vision</p>
+      </section>
+
+      <section class="dash-section fade" id="dashWrap">
+        <p class="label dash-label">Agency pulse</p>
+        <div class="dash" id="dash">
+          <div class="dash-head">
+            <div class="dash-head-copy">
+              <span class="dash-kicker">India · Q1 2026</span>
+              <h3 class="dash-name">Growth snapshot</h3>
+            </div>
+            <span class="dash-status"><span class="dash-status-dot"></span>Live</span>
+          </div>
+
+          <div class="dash-stats">
+            <div class="dash-stat">
+              <span class="dash-stat-label">Clients</span>
+              <span class="dash-stat-value"><strong data-n="3">0</strong></span>
+              <span class="dash-stat-delta up">+2 new</span>
+            </div>
+            <div class="dash-stat">
+              <span class="dash-stat-label">Pipeline</span>
+              <span class="dash-stat-value"><strong data-n="8.5" data-pre="₹" data-suf="L">₹0</strong></span>
+              <span class="dash-stat-delta up">+₹2.1L</span>
+            </div>
+            <div class="dash-stat">
+              <span class="dash-stat-label">Revenue</span>
+              <span class="dash-stat-value"><strong data-n="4.2" data-pre="₹" data-suf="L">₹0</strong></span>
+              <span class="dash-stat-delta muted">This quarter</span>
+            </div>
+            <div class="dash-stat">
+              <span class="dash-stat-label">Audits</span>
+              <span class="dash-stat-value"><strong data-n="6">0</strong></span>
+              <span class="dash-stat-delta muted">Completed</span>
+            </div>
+          </div>
+
+          <div class="dash-chart">
+            <div class="chart-meta">
+              <span>Pipeline trend</span>
+              <span class="chart-badge">+18% MoM</span>
+            </div>
+            <svg viewBox="0 0 400 100" preserveAspectRatio="none" class="chart" aria-hidden="true">
+              <defs>
+                <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="rgba(255,255,255,0.35)"/>
+                  <stop offset="100%" stop-color="#fff"/>
+                </linearGradient>
+                <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="rgba(255,255,255,0.08)"/>
+                  <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                </linearGradient>
+              </defs>
+              <line class="grid-line" x1="0" y1="25" x2="400" y2="25"/>
+              <line class="grid-line" x1="0" y1="50" x2="400" y2="50"/>
+              <line class="grid-line" x1="0" y1="75" x2="400" y2="75"/>
+              <path class="area" d="M0,78 C60,76 120,70 180,62 S300,48 400,38 L400,100 L0,100 Z"/>
+              <path class="line" d="M0,78 C60,76 120,70 180,62 S300,48 400,38"/>
+              <circle class="chart-dot" cx="400" cy="38" r="3"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section id="model" class="clients fade">
+        <p class="label">The model</p>
+        <div class="pipeline">
+          <div class="pipe-line" aria-hidden="true"></div>
+          <div class="logo-row">
+            <span class="step" data-i="0">Discover</span>
+            <span class="step" data-i="1">Validate</span>
+            <span class="step" data-i="2">Build</span>
+            <span class="step" data-i="3">Launch</span>
+            <span class="step" data-i="4">Distribute</span>
+            <span class="step" data-i="5">Grow</span>
+            <span class="step accent" data-i="6">Scale</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="work fade">
+        <p class="label">Client work</p>
+        <h2 class="work-head">Results we ship.</h2>
+        <p class="work-sub">Growth systems built for founders who need traction — not templates.</p>
+
+        <div class="work-grid">
+          <article class="work-card">
+            <a class="work-link" href="https://www.instagram.com/reel/DTYHY38kgpJ/" target="_blank" rel="noopener noreferrer">
+              <div class="work-visual has-photo">
+                <img src="chilli-wok-cover.png" alt="The Chilli Wok">
+                <span class="work-tag">F&amp;B · India</span>
+              </div>
+              <div class="work-body">
+                <div class="work-top">
+                  <h3>The Chilli Wok</h3>
+                  <span class="work-arrow" aria-hidden="true">→</span>
+                </div>
+                <p>Reel-first content system — social growth for a food brand finding its audience.</p>
+                <div class="work-result">
+                  <strong>Reel</strong>
+                  <span>live on Instagram</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card">
+            <a class="work-link" href="#contact">
+              <div class="work-visual v2">
+                <span class="work-tag">HealthTech</span>
+              </div>
+              <div class="work-body">
+                <div class="work-top">
+                  <h3>Kova Health</h3>
+                  <span class="work-arrow" aria-hidden="true">→</span>
+                </div>
+                <p>Launch strategy, landing architecture, and paid acquisition from zero.</p>
+                <div class="work-result">
+                  <strong>$1M</strong>
+                  <span>ARR in first year</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card">
+            <a class="work-link" href="#contact">
+              <div class="work-visual v3">
+                <span class="work-tag">D2C</span>
+              </div>
+              <div class="work-body">
+                <div class="work-top">
+                  <h3>Threadline</h3>
+                  <span class="work-arrow" aria-hidden="true">→</span>
+                </div>
+                <p>Creative testing framework and MarTech stack to cut waste and scale spend.</p>
+                <div class="work-result">
+                  <strong>−62%</strong>
+                  <span>CAC at same ROAS</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="quote fade">
+        <div class="quote-mark" aria-hidden="true">"</div>
+        <p>What is actually stopping this business from growing?</p>
+      </section>
+
+      <section id="contact" class="contact fade">
+        <p class="label">Contact</p>
+        <a class="mail" href="mailto:hello@nichewick.com">hello@nichewick.com</a>
+        <form id="contactForm">
+          <input name="name" required placeholder="Name">
+          <input type="email" name="email" required placeholder="Email">
+          <button class="btn solid" type="submit"><span>Send</span></button>
+        </form>
+      </section>
+
+      <footer class="foot fade">
+        <nav>
+          <a href="#top">Home</a>
+          <a href="#work">Work</a>
+          <a href="#model">Model</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="social">
+          <a href="mailto:hello@nichewick.com">Email</a>
+        </div>
+      </footer>
+    </main>
+
+    <aside class="col side right">
+      <p class="clock fade" id="clock"></p>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

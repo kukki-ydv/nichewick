@@ -3,7 +3,6 @@ const dashWrap = document.getElementById("dashWrap");
 const clock = document.getElementById("clock");
 const steps = document.querySelectorAll(".step");
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-
 function tick() {
   if (!clock) return;
   clock.textContent = new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
@@ -66,16 +65,6 @@ window.addEventListener("load", () => {
       if (el.id === "dashWrap") startDash();
     }
   });
-});
-
-document.getElementById("contactForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const btn = e.target.querySelector("button");
-  btn.textContent = "Sent ✓";
-  setTimeout(() => {
-    btn.innerHTML = "<span>Send</span>";
-    e.target.reset();
-  }, 2000);
 });
 
 initPipeline();

@@ -12,11 +12,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="ambient" aria-hidden="true">
-    <div class="orb orb-a"></div>
-    <div class="orb orb-b"></div>
-  </div>
-  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-grid" id="cursorGrid" aria-hidden="true"></div>
 
   <div class="grid-page">
     <aside class="col side left">
@@ -51,8 +47,11 @@
 
       <section class="dash-section fade" id="dashWrap">
         <p class="label dash-label">Agency pulse</p>
-        <div class="dash" id="dash">
-          <div class="dash-head">
+        <div class="dash-stage" id="dashStage">
+          <div class="dash-tilt" id="dashTilt">
+            <div class="dash" id="dash">
+              <div class="dash-shine" aria-hidden="true"></div>
+              <div class="dash-head dash-layer" data-depth="34">
             <div class="dash-head-copy">
               <span class="dash-kicker">India · Q1 2026</span>
               <h3 class="dash-name">Growth snapshot</h3>
@@ -60,7 +59,7 @@
             <span class="dash-status"><span class="dash-status-dot"></span>Live</span>
           </div>
 
-          <div class="dash-stats">
+          <div class="dash-stats dash-layer" data-depth="24">
             <div class="dash-stat">
               <span class="dash-stat-label">Clients</span>
               <span class="dash-stat-value"><strong data-n="3">0</strong></span>
@@ -83,7 +82,7 @@
             </div>
           </div>
 
-          <div class="dash-chart">
+          <div class="dash-chart dash-layer" data-depth="14">
             <div class="chart-meta">
               <span>Pipeline trend</span>
               <span class="chart-badge">+18% MoM</span>
@@ -91,12 +90,12 @@
             <svg viewBox="0 0 400 100" preserveAspectRatio="none" class="chart" aria-hidden="true">
               <defs>
                 <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="rgba(255,255,255,0.35)"/>
-                  <stop offset="100%" stop-color="#fff"/>
+                  <stop offset="0%" stop-color="rgba(0,0,0,0.2)"/>
+                  <stop offset="100%" stop-color="#000"/>
                 </linearGradient>
                 <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="rgba(255,255,255,0.08)"/>
-                  <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                  <stop offset="0%" stop-color="rgba(0,0,0,0.08)"/>
+                  <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
                 </linearGradient>
               </defs>
               <line class="grid-line" x1="0" y1="25" x2="400" y2="25"/>
@@ -107,21 +106,46 @@
               <circle class="chart-dot" cx="400" cy="38" r="3"/>
             </svg>
           </div>
+            </div>
+          </div>
+          <div class="dash-floor" aria-hidden="true"></div>
         </div>
       </section>
 
-      <section id="model" class="clients fade">
+      <section id="model" class="clients model-section fade">
         <p class="label">The model</p>
-        <div class="pipeline">
-          <div class="pipe-line" aria-hidden="true"></div>
-          <div class="logo-row">
-            <span class="step" data-i="0">Discover</span>
-            <span class="step" data-i="1">Validate</span>
-            <span class="step" data-i="2">Build</span>
-            <span class="step" data-i="3">Launch</span>
-            <span class="step" data-i="4">Distribute</span>
-            <span class="step" data-i="5">Grow</span>
-            <span class="step accent" data-i="6">Scale</span>
+        <p class="model-sub">Seven stages from insight to scale.</p>
+        <div class="model-stage" id="modelStage">
+          <div class="model-tilt" id="modelTilt">
+            <div class="pipeline-shell">
+              <div class="model-hero" id="modelHero">
+                <span class="model-watermark" id="modelWatermark">01</span>
+                <div class="model-hero-inner">
+                  <div class="model-hero-meta">
+                    <span class="model-count" id="modelCount">Step 1 of 7</span>
+                    <span class="model-bar" aria-hidden="true"><span class="model-bar-fill" id="modelBarFill"></span></span>
+                  </div>
+                  <h3 class="model-phase" id="modelPhase">Spot gaps</h3>
+                  <p class="model-desc" id="modelDesc">Find blockers</p>
+                </div>
+              </div>
+
+              <div class="model-rail">
+                <div class="pipeline-track" aria-hidden="true">
+                  <span class="pipeline-line"></span>
+                  <span class="pipeline-progress" id="pipelineProgress"></span>
+                </div>
+                <div class="logo-row">
+                  <span class="step" data-i="0" data-desc="Find blockers"><span class="step-num">01</span><span class="step-name">Spot gaps</span></span>
+                  <span class="step" data-i="1" data-desc="Test demand"><span class="step-num">02</span><span class="step-name">Validate fast</span></span>
+                  <span class="step" data-i="2" data-desc="Design systems"><span class="step-num">03</span><span class="step-name">Build offer</span></span>
+                  <span class="step" data-i="3" data-desc="Go live"><span class="step-num">04</span><span class="step-name">Launch clean</span></span>
+                  <span class="step" data-i="4" data-desc="Reach people"><span class="step-num">05</span><span class="step-name">Drive reach</span></span>
+                  <span class="step" data-i="5" data-desc="Repeat wins"><span class="step-num">06</span><span class="step-name">Grow revenue</span></span>
+                  <span class="step accent" data-i="6" data-desc="Compound growth"><span class="step-num">07</span><span class="step-name">Scale engine</span></span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -165,16 +189,59 @@
       </section>
 
       <section class="quote fade">
-        <div class="quote-mark" aria-hidden="true">"</div>
-        <p>What is actually stopping this business from growing?</p>
+        <div class="quote-inner">
+          <span class="quote-mark quote-mark-open" aria-hidden="true">“</span>
+          <p class="quote-text">
+            <span class="quote-line">What is actually</span>
+            <span class="quote-line"><em class="quote-em">stopping</em> this business from</span>
+            <span class="quote-line quote-accent">growing?</span>
+          </p>
+          <span class="quote-mark quote-mark-close" aria-hidden="true">”</span>
+          <span class="quote-rule" aria-hidden="true"></span>
+        </div>
       </section>
 
       <section id="contact" class="contact fade">
         <p class="label">Contact</p>
-        <p class="contact-wa-label">WhatsApp only</p>
-        <a class="btn solid wa-btn" href="https://wa.me/918796678766?text=Hi%20Nichewick%2C%20I%27d%20like%20to%20connect." target="_blank" rel="noopener noreferrer">
-          <span>Message on WhatsApp</span>
-        </a>
+        <p class="contact-intro">Watch what we do. Then take action.</p>
+        <div class="contact-action">
+          <div class="reel-stage" id="reelStage">
+            <div class="reel-tilt" id="reelTilt">
+              <div class="reel-frame" id="reelFrame">
+                <div class="reel-orbit" aria-hidden="true"></div>
+                <div class="reel-poster" id="reelPoster">
+                  <div class="reel-poster-bg" aria-hidden="true"></div>
+                  <span class="reel-tag">Instagram reel</span>
+                  <button class="reel-play" id="reelPlay" type="button" aria-label="Play Instagram reel on site">
+                    <span class="reel-play-ring" aria-hidden="true"></span>
+                    <span class="reel-play-icon" aria-hidden="true"></span>
+                    <span class="reel-play-text">Play reel</span>
+                  </button>
+                </div>
+                <div class="reel-embed-wrap" id="reelEmbedWrap" hidden>
+                  <iframe
+                    id="reelIframe"
+                    title="Nichewick Instagram reel"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+                <div class="reel-meta" aria-hidden="true">
+                  <span class="reel-likes">Instagram</span>
+                </div>
+              </div>
+            </div>
+            <p class="reel-caption">See how we grow brands</p>
+          </div>
+
+          <div class="contact-cta">
+            <p class="contact-wa-label">WhatsApp only</p>
+            <a class="btn solid wa-btn" href="https://wa.me/918796678766?text=Hi%20Nichewick%2C%20I%27d%20like%20to%20connect." target="_blank" rel="noopener noreferrer">
+              <span>Message on WhatsApp</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       <footer class="foot fade">

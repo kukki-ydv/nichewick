@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
   <link rel="icon" href="nichewick-logo.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="chatbot.css">
 </head>
 <body>
   <div class="cursor-grid" id="cursorGrid" aria-hidden="true"></div>
@@ -267,6 +268,43 @@
     </aside>
   </div>
 
+  <div class="nw-chat" id="nwChat">
+    <button class="nw-chat-fab" type="button" aria-expanded="false" aria-controls="nwChatPanel">
+      <img class="nw-chat-fab-icon" src="chat-icon.png" alt="" width="22" height="22">
+      <span class="nw-chat-fab-label">Chat</span>
+    </button>
+
+    <div class="nw-chat-panel" id="nwChatPanel" aria-hidden="true" role="dialog" aria-labelledby="nwChatTitle">
+      <header class="nw-chat-head">
+        <img class="nw-chat-mark" src="chat-icon.png" alt="" width="36" height="36">
+        <div>
+          <p class="nw-chat-kicker">Nichewick</p>
+          <h2 class="nw-chat-title" id="nwChatTitle">Growth assistant</h2>
+        </div>
+        <button class="nw-chat-close" type="button" aria-label="Close chat">×</button>
+      </header>
+
+      <div class="nw-chat-messages" aria-live="polite"></div>
+
+      <div class="nw-chat-chips" aria-label="Suggested questions"></div>
+
+      <form class="nw-chat-form">
+        <input
+          class="nw-chat-input"
+          type="text"
+          name="message"
+          placeholder="Ask a question in your own words…"
+          autocomplete="off"
+          maxlength="500"
+        />
+        <button class="nw-chat-send" type="submit" aria-label="Send message">
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+  <script src="chatbot.js"></script>
 </body>
 </html>
